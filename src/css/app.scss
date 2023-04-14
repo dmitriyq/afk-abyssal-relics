@@ -1,0 +1,15 @@
+// app global css in SCSS form
+
+.background-light {
+  background-image: url('../assets/background_light.png');
+  background-size: cover;
+}
+.background-dark {
+  background-image: url('../assets/background_dark.png');
+  background-size: cover;
+}
+
+body {
+  background-image: url('../assets/background_light.png');
+  background-size: cover;
+}

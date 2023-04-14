@@ -1,0 +1,13 @@
+{
+  "singleQuote": true,
+  "semi": true,
+  "printWidth": 120,
+  "overrides": [
+    {
+      "files": "src/models/relic.ts",
+      "options": {
+        "printWidth": 140
+      }
+    }
+  ]
+}

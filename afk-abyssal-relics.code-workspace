@@ -1,0 +1,71 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "vue.volar",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "EditorConfig.EditorConfig",
+      "eamodio.gitlens",
+      "wix.vscode-import-cost",
+      "eg2.vscode-npm-script",
+      "vscode-icons-team.vscode-icons",
+      "CodeCoaching.quasar-docs"
+    ]
+  },
+  "settings": {
+    "prettier.endOfLine": "lf",
+    "eslint.alwaysShowStatus": true,
+    "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.fontLigatures": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "eslint.format.enable": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    "git.enableSmartCommit": true,
+
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    "[vue]": {
+      "editor.defaultFormatter": "Vue.volar"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[xml]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "volar.completion.preferredAttrNameCase": "kebab",
+    "volar.completion.preferredTagNameCase": "kebab",
+    "volar.updateImportsOnFileMove.enabled": true,
+    "volar.inlayHints.eventArgumentInInlineHandlers": false
+  }
+}
