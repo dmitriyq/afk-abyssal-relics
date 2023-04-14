@@ -1,6 +1,5 @@
-# Afk Arena Abyssal relic calculator (afk-abyssal-relics)
+# Ae relic calculator (afk-abyssal-relics)
 
-Afk Arena Abyssal relic calculator
 
 ## Install the dependencies
 ```bash
