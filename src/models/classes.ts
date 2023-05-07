@@ -111,10 +111,6 @@ export const getMergedMinClassState = (
     else if (s.level > min.level) return s;
 
     const relics = new Set(...[s.owned.concat(min.owned)]);
-    console.log('src owned:', s.owned);
-    console.log('min owned:', min.owned);
-    console.log('result relics:', relics);
-
     return { level: s.level, owned: [...relics] };
   };
 

@@ -25,10 +25,11 @@
 </template>
 
 <script lang="ts">
+import { cloneDeep } from 'lodash-es';
 import BagPanel from 'src/components/BagPanel.vue';
 import ClassStateForm from 'src/components/input/ClassStateForm.vue';
 import PlayerStateForm from 'src/components/input/PlayerStateForm.vue';
-import { NormalizedClassState, deserializeClassState, getMergedMinClassState, normalizeClassesState, serializeClassState } from 'src/models/classes';
+import { NormalizedClassState, deserializeClassState, normalizeClassesState, serializeClassState } from 'src/models/classes';
 import { Player, deserializePlayer, serializePlayer } from 'src/models/player';
 import { tryUpdateClasses } from 'src/services/simulator-service';
 import { defineComponent, ref, watch } from 'vue';
@@ -79,7 +80,7 @@ export default defineComponent({
 
     const resetResult = () => {
       resultPlayer.value = initPlayer(route.query.player as LocationQueryValue);
-      targetClasses.value = resultPlayer.value.classes;
+      targetClasses.value = cloneDeep(resultPlayer.value.classes);
     };
 
     watch(player, () => {
@@ -87,13 +88,12 @@ export default defineComponent({
       if (pquery !== route.query.player) {
         router.push({ query: { ...route.query, player: pquery } });
       }
-      // set min target to player state
-      targetClasses.value = getMergedMinClassState(targetClasses.value, player.value.classes);
     }, { deep: true, immediate: true });
     watch(playerEditing, (val) => {
-      // router.push({ query: { ...route.query, playerEditing: playerEditing.value ? '1' : undefined }, hash: playerEditing.value === false ? '#target' : undefined });
+      router.push({ query: { ...route.query, playerEditing: playerEditing.value ? '1' : undefined }, hash: playerEditing.value === false ? '#target' : undefined });
       if (!val) {
-        resetResult();
+        resultPlayer.value = cloneDeep(player.value);
+        targetClasses.value = cloneDeep(player.value.classes);
       }
     });
     watch(targetClasses, () => {
