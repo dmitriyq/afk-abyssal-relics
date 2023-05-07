@@ -22,7 +22,7 @@
 </template>
 <script lang="ts">
 import { QInput } from 'quasar';
-import { RelicId, getRelicById, getRelicImage } from 'src/models/relic';
+import { RelicId, getRelicById, getRelicImage, relicFullPrice } from 'src/models/relic';
 import { PropType, computed, defineComponent, ref } from 'vue';
 
 export default defineComponent({
@@ -44,7 +44,7 @@ export default defineComponent({
       if (newVal > 100) return;
       emit('update:modelValue', newVal);
     };
-    const sellPrice = computed(() => Math.round(relic.value.price / 2.5));
+    const sellPrice = computed(() => Math.round(relicFullPrice(relic.value.id) / 2.5));
     return {
       relicCountInputRef,
       relic,

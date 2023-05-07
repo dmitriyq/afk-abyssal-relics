@@ -90,8 +90,11 @@ export default defineComponent({
       // set min target to player state
       targetClasses.value = getMergedMinClassState(targetClasses.value, player.value.classes);
     }, { deep: true, immediate: true });
-    watch(playerEditing, () => {
-      router.push({ query: { ...route.query, playerEditing: playerEditing.value ? '1' : undefined }, hash: playerEditing.value === false ? '#target' : undefined });
+    watch(playerEditing, (val) => {
+      // router.push({ query: { ...route.query, playerEditing: playerEditing.value ? '1' : undefined }, hash: playerEditing.value === false ? '#target' : undefined });
+      if (!val) {
+        resetResult();
+      }
     });
     watch(targetClasses, () => {
       const tquery = serializeClassState(targetClasses.value);

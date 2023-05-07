@@ -93,8 +93,11 @@ export default defineComponent({
       //check is editing and min state
     };
     const buyPrice = (index: number) => {
-      if (props.minState && props.minState.bag) {
-        return relicPrice(relicId(index), props.minState!.bag.relics).price;
+      if (props.minState) {
+        if (props.minState.classes[props.type].owned.includes(relicId(index))) return undefined;
+        if (props.minState.bag) {
+          return relicPrice(relicId(index), props.minState!.bag.relics).price;
+        }
       }
       return undefined;
     };
